@@ -1,6 +1,6 @@
 // import { NavLink } from "react-router-dom";
 
-import Reviews from "./pages/Reviews";
+import LoremIpsum from "./pages/LoremIpsum";
 
 import "./styles/App.scss";
 
@@ -9,7 +9,7 @@ function App() {
     <div className='App'>
       <div className='main-container'>
         <article className='item-container'>
-          <Reviews />
+          <LoremIpsum />
         </article>
       </div>
     </div>

@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import data from "./data";
 import SingleQuestion from "./Question";
+
+import "./style.css";
+
 function Index() {
-  const [questions, setQuestions] = useState(data);
+  const [questions] = useState(data);
 
   return (
     <main>

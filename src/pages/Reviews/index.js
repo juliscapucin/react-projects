@@ -1,6 +1,5 @@
 import React from "react";
 import Review from "./Review";
-import { FaChevronRight, FaChevronLeft, FaQuoteRight } from "react-icons/fa";
 
 import "./index.css";
 
