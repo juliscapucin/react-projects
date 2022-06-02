@@ -1,6 +1,6 @@
 // import { NavLink } from "react-router-dom";
 
-import NavBar from "./pages/NavBar";
+import Submenus from "./pages/Submenus";
 
 import "./styles/App.scss";
 
@@ -9,7 +9,7 @@ function App() {
     <div className='App'>
       <div className='main-container'>
         <article className='item-container'>
-          <NavBar />
+          <Submenus />
         </article>
       </div>
     </div>
