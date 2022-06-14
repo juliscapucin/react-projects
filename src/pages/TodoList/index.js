@@ -13,7 +13,7 @@ const getLocalStorage = () => {
   }
 };
 
-function App() {
+function TodoList() {
   const [name, setName] = useState("");
   const [list, setList] = useState(getLocalStorage());
   const [isEditing, setIsEditing] = useState(false);
@@ -108,4 +108,4 @@ function App() {
   );
 }
 
-export default App;
+export default TodoList;

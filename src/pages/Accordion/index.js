@@ -1,19 +1,19 @@
 import React, { useState } from "react";
 import data from "./data";
-import SingleQuestion from "./Question";
+import Item from "./Item";
 
 import "./style.css";
 
-function Index() {
-  const [questions] = useState(data);
+function Accordion() {
+  const [experience] = useState(data);
 
   return (
     <main>
       <div className='container'>
-        <h3>Questions and answers: Login</h3>
+        <h3>Work Experience</h3>
         <section className='info'>
-          {questions.map((question) => {
-            return <SingleQuestion key={question.id} {...question} />;
+          {experience.map((item) => {
+            return <Item key={item.id} {...item} />;
           })}
         </section>
       </div>
@@ -21,4 +21,4 @@ function Index() {
   );
 }
 
-export default Index;
+export default Accordion;
