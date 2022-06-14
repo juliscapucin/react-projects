@@ -10,7 +10,7 @@ function Accordion() {
   return (
     <main>
       <div className='container'>
-        <h3>Work Experience</h3>
+        <h1>Work Experience</h1>
         <section className='info'>
           {experience.map((item) => {
             return <Item key={item.id} {...item} />;

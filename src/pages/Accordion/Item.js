@@ -12,11 +12,7 @@ const Item = ({ title, info }) => {
       <header>
         <h4>{title}</h4>
         <button className='btn' onClick={() => setShowInfo(!showInfo)}>
-          {showInfo ? (
-            <AiOutlineMinus className='btn-icon' />
-          ) : (
-            <AiOutlinePlus className='btn-icon' />
-          )}
+          {showInfo ? <AiOutlineMinus /> : <AiOutlinePlus />}
         </button>
       </header>
 
