@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import data from "./data";
 import Item from "./Item";
 
-import "./style.css";
+import "./style.scss";
 
 function Accordion() {
   const [experience] = useState(data);
 
   return (
     <main>
-      <div className='container'>
+      <div className='accordion-container'>
         <h1>Work Experience</h1>
         <section className='info'>
           {experience.map((item) => {

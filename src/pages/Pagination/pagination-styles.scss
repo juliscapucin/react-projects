@@ -1,0 +1,128 @@
+/*
+=============== 
+Variables
+===============
+*/
+
+@import "../../styles/variables";
+
+/* Orange */
+$clr-orange-1: hsl(34, 61%, 16%);
+$clr-orange-2: hsl(34, 39%, 23%);
+$clr-orange-3: hsl(34, 34%, 30%);
+$clr-orange-4: hsl(34, 28%, 39%);
+$clr-orange-5: hsl(34, 91%, 46%);
+$clr-orange-6: hsl(34, 23%, 60%);
+$clr-orange-7: hsl(34, 27%, 70%);
+$clr-orange-8: hsl(34, 31%, 80%);
+$clr-orange-9: hsl(34, 33%, 89%);
+$clr-orange-10: hsl(34, 36%, 96%);
+
+/*
+=============== 
+Pagination
+===============
+*/
+.section-title {
+  width: 100%;
+  text-align: center;
+  margin-top: 4rem;
+}
+.underline {
+  width: 8rem;
+  height: 0.25rem;
+  background: $clr-orange-5;
+  margin: 0 auto;
+}
+.followers-container {
+  width: 90%;
+  max-width: $max-width;
+  margin: 1rem auto;
+}
+.container {
+  min-width: 100%;
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+@media screen and (min-width: 576px) {
+  .container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+.card {
+  background: $clr-white;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.75rem;
+}
+
+.card h4 {
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  color: $clr-orange-5;
+}
+
+.btn {
+  padding: 0.35rem 0.75rem;
+  letter-spacing: 1.6px;
+  font-size: 0.75rem;
+  color: $clr-white;
+  background-color: $clr-orange-5;
+  border-color: transparent;
+  text-transform: uppercase;
+  transition: $transition;
+  cursor: pointer;
+  height: fit-content;
+}
+
+.btn:hover {
+  background-color: $clr-orange-3;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.page-btn {
+  width: 2rem;
+  height: 2rem;
+  background-color: $clr-orange-7;
+  border-color: transparent;
+  cursor: pointer;
+  margin: 0.5rem;
+  transition: $transition;
+}
+.active-btn {
+  background: $clr-orange-1;
+  color: $clr-white;
+}
+.prev-btn,
+.next-btn {
+  background: transparent;
+  border-color: transparent;
+  font-weight: bold;
+  text-transform: capitalize;
+  letter-spacing: $spacing;
+  margin: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 775px) {
+  .btn-container {
+    margin: 0 auto;
+    max-width: 700px;
+  }
+}

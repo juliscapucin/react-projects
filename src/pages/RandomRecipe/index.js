@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import "./index.css";
+import "./randomrecipe.scss";
 
 const url = "http://recipes.wordpresssites.host/wp-json/wp/v2/recipes/";
 
@@ -18,12 +18,26 @@ const defaultRecipe = {
 function App() {
   const [loading, setLoading] = useState(true);
   const [recipe, setRecipe] = useState(defaultRecipe);
+  const [formerRecipe, setFormerRecipe] = useState(null);
   const [text, setText] = useState("random recipe");
 
   const getRecipe = async () => {
+    setLoading(true);
+
     const response = await fetch(url);
     const data = await response.json();
-    const randomNumber = Math.floor(Math.random() * (data.length + 1));
+    let randomNumber = Math.floor(Math.random() * data.length);
+
+    console.log(randomNumber);
+
+    if (formerRecipe === randomNumber && randomNumber === data.length - 1) {
+      randomNumber = 0;
+    }
+    if (formerRecipe === randomNumber) {
+      randomNumber++;
+    }
+
+    setFormerRecipe(randomNumber);
 
     const randomRecipe = data[randomNumber];
 
@@ -58,7 +72,7 @@ function App() {
 
   const handleValue = (e) => {
     //if e.target is a button
-    if (e.target.classList.contains("btn")) {
+    if (e.target.classList.contains("random-recipe-btn-menu")) {
       const newValue = e.target.dataset.label;
       const allButtons = e.target.parentElement.children;
 
@@ -76,7 +90,7 @@ function App() {
   };
 
   return (
-    <main>
+    <main className='section-random'>
       <div className='recipe-container'>
         <div className='recipe-img-container'>
           <img
@@ -90,21 +104,21 @@ function App() {
         </div>
         <div className='btn-menu-container'>
           <button
-            className='btn btn-menu'
+            className='random-recipe-btn random-recipe-btn-menu'
             data-label='info'
             onClick={handleValue}
           >
             Informatie
           </button>
           <button
-            className='btn btn-menu'
+            className='random-recipe-btn random-recipe-btn-menu'
             data-label='ingredients'
             onClick={handleValue}
           >
             Ingredienten
           </button>
           <button
-            className='btn btn-menu'
+            className='random-recipe-btn random-recipe-btn-menu'
             data-label='instructions'
             onClick={handleValue}
           >
@@ -116,7 +130,11 @@ function App() {
           dangerouslySetInnerHTML={{ __html: text }}
         ></div>
         <div className='random-btn-container'>
-          <button className='btn' type='button' onClick={getRecipe}>
+          <button
+            className='random-recipe-btn'
+            type='button'
+            onClick={getRecipe}
+          >
             {loading ? "loading..." : "Nieuw recept"}
           </button>
         </div>

@@ -1,0 +1,41 @@
+/*
+=============== 
+Fonts
+===============
+*/
+
+@import url("https://use.typekit.net/cbg5juo.css");
+
+/*
+=============== 
+Variables
+===============
+*/
+
+/* Fonts */
+$font-primary: ff-real-headline-pro;
+$font-secondary: ff-real-text-pro;
+
+/* Colors */
+$clr-white: #fff;
+$clr-black: #222;
+
+/* Green */
+$clr-green-1: hsl(125, 61%, 16%);
+$clr-green-2: hsl(125, 39%, 23%);
+$clr-green-3: hsl(125, 34%, 30%);
+$clr-green-4: hsl(125, 28%, 39%);
+$clr-green-5: hsl(125, 22%, 49%);
+$clr-green-6: hsl(125, 23%, 60%);
+$clr-green-7: hsl(125, 27%, 70%);
+$clr-green-8: hsl(125, 31%, 80%);
+$clr-green-9: hsl(125, 33%, 89%);
+$clr-green-10: hsl(125, 36%, 96%);
+
+$transition: all 0.3s linear;
+$spacing: 0.1rem;
+$radius: 0.25rem;
+$light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+$dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+$max-width: 1170px;
+$fixed-width: 620px;

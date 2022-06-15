@@ -1,0 +1,100 @@
+@import "../../styles/variables";
+
+/*
+=============== 
+Fonts
+===============
+*/
+
+@import url("https://use.typekit.net/cbg5juo.css");
+
+/*
+=============== 
+Questions
+===============
+*/
+
+main {
+  min-width: 100vw;
+  min-height: 100vh;
+  /* using flex because of better browser support */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.accordion-container {
+  width: 90vw;
+  margin: 5rem auto;
+  max-width: $max-width;
+  display: grid;
+  gap: 1rem 2rem;
+}
+.accordion-container h3 {
+  line-height: 1.2;
+  font-weight: 500;
+}
+@media screen and (min-width: 992px) {
+  .accordion-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+}
+.question {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-top: 1px solid $clr-black;
+}
+
+.question:last-child {
+  border-bottom: 1px solid $clr-black;
+  padding-bottom: 1.5rem;
+}
+.question h4 {
+  text-transform: none;
+  line-height: 1.5;
+}
+.question p {
+  color: $clr-black;
+  margin-bottom: 0;
+  margin-top: 1rem;
+}
+.question header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.question header h4 {
+  margin-bottom: 0;
+}
+
+.btn-accordion {
+  background: transparent;
+  border: 1px solid $clr-black;
+  box-shadow: none;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $clr-black;
+  cursor: pointer;
+  margin-left: 1rem;
+  align-self: center;
+}
+
+/*
+=============== 
+Text
+===============
+*/
+
+.active {
+  overflow: hidden;
+  transition: $transition;
+}
+
+.inactive {
+  overflow: hidden;
+  transition: $transition;
+}

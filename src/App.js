@@ -6,6 +6,7 @@ import ShoppingCart from "./pages/ShoppingCart";
 import TodoList from "./pages/TodoList";
 import Accordion from "./pages/Accordion";
 import RandomRecipe from "./pages/RandomRecipe";
+import Pagination from "./pages/Pagination";
 
 import SharedLayout from "./pages/SharedLayout";
 
@@ -21,6 +22,7 @@ function App() {
         <Route path='/accordion' element={<Accordion />} />
         <Route path='/todolist' element={<TodoList />} />
         <Route path='/randomrecipe' element={<RandomRecipe />} />
+        <Route path='/pagination' element={<Pagination />} />
       </Route>
     </Routes>
   );
