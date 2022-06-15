@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import "./randomrecipe.scss";
+import "./style.scss";
 
 const url = "http://recipes.wordpresssites.host/wp-json/wp/v2/recipes/";
 

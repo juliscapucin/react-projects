@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useFetch } from "./useFetch";
 
-import "./pagination-styles.scss";
+import "./style.scss";
 
 import Follower from "./Follower";
 
@@ -13,19 +13,68 @@ function App() {
   useEffect(() => {
     if (loading) return;
     setFollowers(data[page]);
-  }, [loading]);
+  }, [loading, page]);
+
+  const handlePage = (index) => {
+    setPage(index);
+  };
+
+  const nextPage = (page) => {
+    if (page + 1 === data.length) {
+      setPage(0);
+    } else {
+      setPage(page + 1);
+    }
+  };
+
+  const prevPage = (page) => {
+    if (page === 0) {
+      setPage(data.length - 1);
+    } else {
+      setPage(page - 1);
+    }
+  };
 
   return (
-    <main>
-      <div className='section-title'>
+    <main className='pagination-section'>
+      <div className='pagination-section-title'>
         <h1>{loading ? "loading..." : "Pagination"}</h1>
       </div>
-      <section className='followers-container'>
-        <div className='container'>
-          {data.map((follower) => {
+      <section className='pagination-followers-container'>
+        <div className='pagination-container'>
+          {followers.map((follower) => {
             return <Follower key={follower.id} {...follower} />;
           })}
         </div>
+        {!loading && (
+          <div className='pagination-btn-container'>
+            <button
+              className='pagination-prev-btn'
+              onClick={() => prevPage(page)}
+            >
+              Prev
+            </button>
+            {data.map((item, index) => {
+              return (
+                <button
+                  key={index}
+                  className={`pagination-page-btn ${
+                    index === page && "pagination-active-btn"
+                  }`}
+                  onClick={() => handlePage(index)}
+                >
+                  {index + 1}
+                </button>
+              );
+            })}
+            <button
+              className='pagination-prev-btn'
+              onClick={() => nextPage(page)}
+            >
+              Next
+            </button>
+          </div>
+        )}
       </section>
     </main>
   );
