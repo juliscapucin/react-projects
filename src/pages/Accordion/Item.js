@@ -10,7 +10,9 @@ const Item = ({ title, info }) => {
   return (
     <article className='question'>
       <header>
-        <h4>{title}</h4>
+        <button className='btn-title' onClick={() => setShowInfo(!showInfo)}>
+          <h4>{title}</h4>
+        </button>
         <button
           className='btn-accordion'
           onClick={() => setShowInfo(!showInfo)}
