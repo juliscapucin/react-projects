@@ -52,7 +52,7 @@ function App() {
               className='pagination-prev-btn'
               onClick={() => prevPage(page)}
             >
-              Prev
+              {`<`}
             </button>
             {data.map((item, index) => {
               return (
@@ -71,7 +71,7 @@ function App() {
               className='pagination-prev-btn'
               onClick={() => nextPage(page)}
             >
-              Next
+              {`>`}
             </button>
           </div>
         )}
