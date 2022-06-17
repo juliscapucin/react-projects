@@ -7,7 +7,7 @@ Variables
 @import "../../styles/variables";
 
 /* Green */
-$clr-green-1: hsl(125, 80%, 16%);
+$clr-green-1: hsl(125, 80%, 10%);
 $clr-green-2: hsl(125, 50%, 23%);
 $clr-green-3: hsl(125, 50%, 30%);
 $clr-green-4: hsl(125, 50%, 39%);
@@ -17,6 +17,14 @@ $clr-green-7: hsl(125, 40%, 70%);
 $clr-green-8: hsl(125, 40%, 80%);
 $clr-green-9: hsl(125, 40%, 89%);
 $clr-green-10: hsl(125, 40%, 96%);
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: $clr-green-1;
+}
 
 /*-----------*/
 /*  Buttons  */
@@ -66,6 +74,7 @@ $clr-green-10: hsl(125, 40%, 96%);
 .random-recipe-btn-menu.active {
   color: $clr-white;
   background-color: $clr-green-5;
+  margin: 0 0.5rem;
 }
 
 /*---------*/

@@ -100,7 +100,7 @@ function App() {
           />
         </div>
         <div className='recipe-title'>
-          <h2>{recipe.name}</h2>
+          <h3>{recipe.name}</h3>
         </div>
         <div className='btn-menu-container'>
           <button
