@@ -1,12 +1,13 @@
 import { Route, Routes } from "react-router-dom";
 
-import Home from "./pages/Home";
-import Test from "./pages/Test";
-import ShoppingCart from "./pages/ShoppingCart";
-import TodoList from "./pages/TodoList";
 import Accordion from "./pages/Accordion";
-import RandomRecipe from "./pages/RandomRecipe";
+import Home from "./pages/Home";
+import InfiniteScroll from "./pages/InfiniteScroll";
 import Pagination from "./pages/Pagination";
+import RandomRecipe from "./pages/RandomRecipe";
+import ShoppingCart from "./pages/ShoppingCart";
+import Test from "./pages/Test";
+import TodoList from "./pages/TodoList";
 
 import SharedLayout from "./pages/SharedLayout";
 
@@ -16,13 +17,14 @@ function App() {
   return (
     <Routes>
       <Route path='/' element={<SharedLayout />}>
-        <Route index element={<Home />} />
-        <Route path='/test' element={<Test />} />
-        <Route path='/shoppingcart' element={<ShoppingCart />} />
         <Route path='/accordion' element={<Accordion />} />
-        <Route path='/todolist' element={<TodoList />} />
-        <Route path='/randomrecipe' element={<RandomRecipe />} />
+        <Route index element={<Home />} />
+        <Route path='/infinitescroll' element={<InfiniteScroll />} />
         <Route path='/pagination' element={<Pagination />} />
+        <Route path='/randomrecipe' element={<RandomRecipe />} />
+        <Route path='/shoppingcart' element={<ShoppingCart />} />
+        <Route path='/test' element={<Test />} />
+        <Route path='/todolist' element={<TodoList />} />
       </Route>
     </Routes>
   );
