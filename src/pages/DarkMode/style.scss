@@ -1,0 +1,142 @@
+/*
+=============== 
+Variables
+===============
+*/
+
+@import "../../styles/variables";
+
+/*
+=============== 
+Global Styles
+===============
+*/
+
+:root {
+  &.dark-theme {
+    $clr-bg: #0e2211;
+    $clr-tint-bg: hsl(129, 50%, 20%);
+    $clr-text: rgb(201, 195, 195);
+    $clr-tint1: hsl(231, 50%, 60%);
+    $clr-tint2: #b15500;
+    background-color: $clr-bg;
+    color: $clr-text;
+    & h1 {
+      color: $clr-tint-bg;
+    }
+    & h4,
+    .dark-mode-logo {
+      color: $clr-tint2;
+    }
+    & h2 {
+      color: $clr-tint1;
+    }
+    & button {
+      background-color: $clr-tint2;
+    }
+    transition: $transition;
+  }
+  &.light-theme {
+    $clr-bg: rgb(233, 233, 225);
+    $clr-tint-bg: hsl(66, 90%, 74%);
+    $clr-text: #080806;
+    $clr-tint1: #ff799b;
+    $clr-tint2: hsl(239, 70%, 49%);
+    background-color: $clr-bg;
+    color: $clr-text;
+    & h1 {
+      color: $clr-tint-bg;
+    }
+    & h4,
+    .dark-mode-logo {
+      color: $clr-tint1;
+    }
+    & h2 {
+      color: $clr-tint2;
+    }
+    & button {
+      background-color: $clr-tint1;
+    }
+    transition: $transition;
+  }
+}
+
+.dark-mode-main-container {
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+}
+
+.dark-mode-nav-center {
+  width: 90vw;
+  max-width: $max-width;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+}
+.dark-mode-logo {
+  font-size: clamp(2rem, 3vw, 4rem);
+  text-transform: capitalize;
+  letter-spacing: -2px;
+}
+
+.dark-mode-article {
+  width: 90vw;
+  max-width: $max-width;
+  margin: 6rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 70vw;
+  > h1 {
+    font-weight: 100;
+    font-size: clamp(6rem, 10vw, 10rem);
+  }
+
+  @media screen and (min-width: 992px) {
+    margin: 12rem auto;
+    > p {
+      max-width: 40vw;
+    }
+  }
+}
+
+.dark-mode-btn {
+  color: $clr-black;
+  padding: 0.5rem 0.8rem;
+  border: transparent;
+  text-transform: capitalize;
+  transition: all 0.3s linear;
+  font-size: clamp(0.8rem, 1vw, 1rem);
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: $transition;
+
+  &:hover {
+    transform: scale(1.1);
+    transition: $transition;
+  }
+}
+
+.dark-mode-bg {
+  position: absolute;
+  top: -1rem;
+  right: 0;
+  bottom: 0;
+  left: -1rem;
+  z-index: -1;
+  display: flex;
+  align-items: flex-start;
+  @media screen and (min-width: 992px) {
+    top: -5rem;
+    left: -3rem;
+  }
+  > h1 {
+    font-size: clamp(9rem, 30vw, 30rem);
+    // color: $clr-tint;
+    text-align: center;
+  }
+}
