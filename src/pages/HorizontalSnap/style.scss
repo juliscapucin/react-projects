@@ -1,0 +1,73 @@
+/*
+=============== 
+Variables
+===============
+*/
+
+@import "../../styles/variables";
+
+/*
+=============== 
+Global Styles
+===============
+*/
+
+.hor-snap-main-container {
+  position: relative;
+  width: 100vw;
+  padding: 3rem;
+}
+
+.hor-snap-gallery {
+  margin-top: 6rem;
+}
+
+.hor-snap-media-scroller {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 21%;
+  grid-gap: 2rem;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+
+  img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+  }
+}
+
+.hor-snap-inline {
+  scroll-snap-type: inline mandatory;
+  // scroll-padding-inline: 2rem;
+
+  & > * {
+    scroll-snap-align: start;
+  }
+}
+
+.hor-snap-img-container {
+  display: grid;
+  grid-template-rows: min-content;
+  gap: 1rem;
+  padding: 1rem;
+  border: $clr-black solid 1px;
+}
+
+.hor-snap-btn {
+  color: $clr-black;
+  padding: 0.5rem 0.8rem;
+  border: transparent;
+  text-transform: capitalize;
+  transition: all 0.3s linear;
+  font-size: clamp(0.8rem, 1vw, 1rem);
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: $transition;
+
+  &:hover {
+    transform: scale(1.1);
+    transition: $transition;
+  }
+}
