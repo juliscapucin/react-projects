@@ -1,0 +1,116 @@
+/*
+=============== 
+Variables
+===============
+*/
+
+@import "../../styles/variables";
+
+/*
+=============== 
+Scrollbar
+===============
+*/
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/*
+=============== 
+Styles
+===============
+*/
+
+.hor-group-snap-main-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: hidden;
+  background-color: $clr-black;
+}
+
+.hor-group-snap-gallery {
+  margin: 0;
+}
+
+.hor-group-snap-media-scroller {
+  transform: rotate(-90deg) translateY(-100vh);
+  transform-origin: right top;
+  width: 100vh;
+  height: 100vw;
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: 25vw;
+  overflow-x: auto;
+  overflow-y: auto;
+  overscroll-behavior-inline: contain;
+}
+
+.hor-group-snap-inline {
+  scroll-snap-type: both mandatory;
+
+  // scroll-padding-inline: 2rem;
+
+  & > * {
+    scroll-snap-align: start end;
+  }
+}
+
+.hor-group-snap-user-name {
+  position: absolute;
+  transform: rotate(-90deg);
+  transform-origin: top left;
+  bottom: -2rem;
+  left: 2rem;
+  text-align: left;
+  display: flex;
+  align-items: flex-end;
+  z-index: 1;
+  opacity: 100%;
+  transition: opacity 0.3s linear;
+
+  h1 {
+    color: $clr-white;
+    font-weight: 100;
+    font-size: clamp(3rem, 5vw, 5rem);
+  }
+
+  :hover {
+    opacity: 50%;
+    transition: opacity 0.3s linear;
+  }
+}
+.hor-group-snap-user-bio {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  justify-items: flex-end;
+  z-index: 2;
+
+  h4 {
+    color: $clr-white;
+    font-weight: 100;
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+  }
+}
+
+.hor-group-snap-img-container {
+  transform: rotate(90deg) translateY(-55vh) translateX(25vw);
+  transform-origin: right top;
+  height: 100vh;
+  width: 25vw;
+
+  .hor-group-snap-img {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
