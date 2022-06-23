@@ -8,22 +8,16 @@ Variables
 
 /*
 =============== 
-Scrollbar
-===============
-*/
-
-::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-}
-
-/*
-=============== 
 Styles
 ===============
 */
 
 .hor-group-snap-main-container {
+  ::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
   position: relative;
   width: 100vw;
   height: 100vh;
