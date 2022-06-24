@@ -16,45 +16,34 @@ Grid Styles
   width: 100vw;
   height: 100vh;
   overflow-y: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .grid-stretch-scroller {
-  transform: rotate(-90deg) translateY(-100vh);
+  transform: rotate(-90deg);
   margin: 0;
-  width: 120vh;
+  width: 100vh;
   height: 100vw;
   display: grid;
   grid-auto-flow: row;
-  grid-auto-rows: 50vw;
-  place-items: start;
+  grid-auto-rows: 25vw;
+  place-items: center;
   overflow-x: auto;
   overflow-y: auto;
   overscroll-behavior-inline: contain;
 }
 
-// .grid-item-container {
-//   transform: rotate(90deg);
-//   height: 100vh;
-//   height: 25vw;
-//   border: 1px solid $clr-black;
-//   transition: 0.5s;
-
-//     &:hover {
-//       min-width: 40vw;
-//       transition: 0.5s;
-//     }
-// }
-
 .grid-item-container {
-  transform: rotate(90deg) translateY(-55vh) translateX(50vw);
-  transform-origin: right top;
-  height: 120vh;
+  transform: rotate(-90deg);
+  height: 110vh;
   width: 50vw;
   border: 1px solid $clr-black;
-  background-color: pink;
+  background-color: $clr-white;
 
   .hor-group-snap-img {
-    height: 100%;
+    height: 100vh;
     width: 100%;
     overflow: hidden;
     img {
@@ -66,11 +55,11 @@ Grid Styles
 
   @media screen and (min-width: 992px) {
     width: 25vw;
-    height: 120vh;
+
     transition: 1s;
 
     &:hover {
-      width: 28vw;
+      width: 35vw;
       transition: 1s;
     }
   }
