@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 
 import Accordion from "./pages/Accordion";
 import DarkMode from "./pages/DarkMode";
+import GridStretch from "./pages/GridStretch";
 import Home from "./pages/Home";
 import HorizontalSnap from "./pages/HorizontalSnap";
 import HorizontalGroupSnap from "./pages/HorizontalGroupSnap";
@@ -21,6 +22,7 @@ function App() {
       <Route path='/' element={<SharedLayout />}>
         <Route path='/accordion' element={<Accordion />} />
         <Route path='/darkmode' element={<DarkMode />} />
+        <Route path='/gridstretch' element={<GridStretch />} />
         <Route index element={<Home />} />
         <Route path='/horizontalsnap' element={<HorizontalSnap />} />
         <Route path='/horizontalgroupsnap' element={<HorizontalGroupSnap />} />

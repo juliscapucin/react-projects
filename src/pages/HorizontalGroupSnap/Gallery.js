@@ -32,7 +32,7 @@ export default function Gallery({ name }) {
   }, []);
 
   return (
-    <>
+    <div className='hor-group-snap-gallery'>
       <a
         className='hor-group-snap-btn'
         href={`${!loading && user.links.html}`}
@@ -44,15 +44,15 @@ export default function Gallery({ name }) {
         <div className='hor-group-snap-user-name'>
           <h1>{user.name}</h1>
         </div>
-        <div className='hor-group-snap-user-bio'>
-          <h4>{user.bio}</h4>
-        </div>
       </a>
+      {/* <div className='hor-group-snap-user-bio'>
+        <h4>{user.bio}</h4>
+      </div> */}
       <div className='hor-group-snap-media-scroller hor-group-snap-inline'>
-        {images.map((item) => {
-          console.log(user);
+        {images.map((item, index) => {
           return (
             <Image
+              index={index + 1}
               key={item.id}
               {...item}
               {...user}
@@ -61,6 +61,6 @@ export default function Gallery({ name }) {
           );
         })}
       </div>
-    </>
+    </div>
   );
 }

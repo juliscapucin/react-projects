@@ -11,7 +11,7 @@ export default function App() {
     <section className='hor-group-snap-main-container'>
       {featuredUsers.map((item, index) => {
         return (
-          <article key={index} className='hor-group-snap-gallery'>
+          <article key={index}>
             <Gallery {...item} />
           </article>
         );

@@ -8,7 +8,7 @@ Variables
 
 /*
 =============== 
-Styles
+Grid Styles
 ===============
 */
 
@@ -18,7 +18,6 @@ Styles
     height: 0;
   }
 
-  position: relative;
   width: 100vw;
   height: 100vh;
   overflow-y: hidden;
@@ -36,10 +35,15 @@ Styles
   height: 100vw;
   display: grid;
   grid-auto-flow: row;
-  grid-auto-rows: 25vw;
+  grid-auto-rows: 50vw;
+  place-items: start;
   overflow-x: auto;
   overflow-y: auto;
   overscroll-behavior-inline: contain;
+
+  @media screen and (min-width: 992px) {
+    grid-auto-rows: minmax(33.3vw, 50vw);
+  }
 }
 
 .hor-group-snap-inline {
@@ -52,12 +56,47 @@ Styles
   }
 }
 
+.hor-group-snap-img-container {
+  transform: rotate(90deg) translateY(-55vh) translateX(50vw);
+  transform-origin: right top;
+  height: 100vh;
+  width: 50vw;
+  display: grid;
+  place-items: center;
+
+  .hor-group-snap-img {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    width: 33.3vw;
+    height: 100vh;
+    transition: 1s;
+
+    // &:hover {
+    //   width: 28vw;
+    //   transition: 1s;
+    // }
+  }
+}
+
+/*
+=============== 
+Type styles
+===============
+*/
+
 .hor-group-snap-user-name {
   position: absolute;
-  transform: rotate(-90deg);
-  transform-origin: top left;
-  bottom: -2rem;
-  left: 2rem;
+  top: 1rem;
+  left: 1rem;
   text-align: left;
   display: flex;
   align-items: flex-end;
@@ -68,10 +107,10 @@ Styles
   h1 {
     color: $clr-white;
     font-weight: 100;
-    font-size: clamp(3rem, 5vw, 5rem);
+    font-size: clamp(2rem, 3vw, 3rem);
   }
 
-  :hover {
+  &:hover {
     opacity: 50%;
     transition: opacity 0.3s linear;
   }
@@ -87,24 +126,40 @@ Styles
   h4 {
     color: $clr-white;
     font-weight: 100;
-    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    font-size: clamp(1.2rem, 1.5vw, 1.5rem);
   }
 }
 
-.hor-group-snap-img-container {
-  transform: rotate(90deg) translateY(-55vh) translateX(25vw);
-  transform-origin: right top;
-  height: 100vh;
-  width: 25vw;
+.hor-group-snap-info {
+  position: absolute;
+  bottom: 0;
+  height: 30vh;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: $clr-white;
 
-  .hor-group-snap-img {
-    height: 100%;
-    width: 100%;
+  h3 {
+    color: $clr-white;
+    font-weight: 100;
+  }
+  p {
+    color: $clr-white;
+    font-family: $font-primary;
+    font-weight: 100;
+    font-size: clamp(1rem, 1.2vw, 1.2rem);
+  }
+  .hor-group-snap-paragraph {
+    color: $clr-white;
     overflow: hidden;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    height: 0;
+    transition: $transition;
+    &.hor-group-snap-paragraph-open {
+      height: max-content;
+      transition: $transition;
     }
   }
 }
