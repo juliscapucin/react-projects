@@ -5,7 +5,7 @@ import Gallery from "./Gallery";
 import "./style.scss";
 
 export default function App() {
-  const [featuredUsers, setFeaturedUsers] = useState(users);
+  const [featuredUsers] = useState(users);
 
   return (
     <main className='photo-gallery-main-container'>
