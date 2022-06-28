@@ -9,6 +9,7 @@ export default function App() {
 
   return (
     <section className='photo-gallery-main-container'>
+      <div className='photo-gallery-no-click top'></div>
       {featuredUsers.map((item, index) => {
         return (
           <article key={index}>
@@ -16,6 +17,7 @@ export default function App() {
           </article>
         );
       })}
+      <div className='photo-gallery-no-click bottom'></div>
     </section>
   );
 }

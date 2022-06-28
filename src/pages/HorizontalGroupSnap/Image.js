@@ -21,25 +21,14 @@ export default function Image({ urls, alt_description, index }) {
         onMouseEnter={() => setShowInfo(!showInfo)}
         onMouseLeave={() => setShowInfo(!showInfo)}
       >
-        <div className='hor-group-snap-info'>
-          <h3>{info.title}</h3>
-          <div
-            className='hor-group-snap-paragraph'
-            style={
-              showInfo
-                ? {
-                    height: `${
-                      refParagraph.current.getBoundingClientRect().height + 15
-                    }px`,
-                  }
-                : {
-                    height: 0,
-                  }
-            }
-          >
-            <p ref={refParagraph}>{info.paragraph}</p>
+        <div className='hor-group-snap-info-container'>
+          <div className='hor-group-snap-info'>
+            <h3>{info.title}</h3>
+            <div className='hor-group-snap-paragraph'>
+              <p ref={refParagraph}>{info.paragraph}</p>
+            </div>
+            <p>{info.shortText}</p>
           </div>
-          <p>{info.shortText}</p>
         </div>
       </button>
       <div className='hor-group-snap-img'>

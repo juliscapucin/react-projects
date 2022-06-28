@@ -15,27 +15,52 @@ export default function Image({ url, description, index }) {
   }, []);
 
   return (
-    <div
-      className='photo-gallery-img-container'
-      id={index}
-      style={
-        showInfo
-          ? {
-              width: "100vw",
-              zIndex: "500",
-            }
-          : {
-              width: "33.3vw",
-            }
-      }
+    <button
+      className='photo-gallery-btn'
+      onMouseEnter={() => setShowInfo(!showInfo)}
+      onMouseLeave={() => setShowInfo(!showInfo)}
     >
-      <button className='btn-title' onClick={() => setShowInfo(!showInfo)}>
-        <a href={`#${index}`}>
-          <div className='photo-gallery-img'>
-            <img src={url} alt={description} />
+      <div
+        className='photo-gallery-img-container'
+        id={index}
+        // style={
+        //   showInfo
+        //     ? {
+        //         width: "70vw",
+        //         height: "80vh",
+        //       }
+        //     : {
+        //         width: "60vw",
+        //         height: "70vh",
+        //       }
+        // }
+      >
+        <div className='photo-gallery-info'>
+          <h3>{info.title}</h3>
+          <div
+            className='photo-gallery-paragraph-container'
+            style={
+              showInfo
+                ? {
+                    height: `${
+                      refParagraph.current.getBoundingClientRect().height + 15
+                    }px`,
+                  }
+                : {
+                    height: 0,
+                  }
+            }
+          >
+            <div className='photo-gallery-paragraph' ref={refParagraph}>
+              <p>{info.paragraph}</p>
+              <p>{info.shortText}</p>
+            </div>
           </div>
-        </a>
-      </button>
-    </div>
+        </div>
+        <div className='photo-gallery-img'>
+          <img src={url} alt={description} />
+        </div>
+      </div>
+    </button>
   );
 }
