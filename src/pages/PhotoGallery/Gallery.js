@@ -34,7 +34,7 @@ export default function Gallery({ name }) {
   }, []);
 
   return (
-    <div className='photo-gallery-gallery'>
+    <section className='photo-gallery-gallery'>
       <a
         className='photo-gallery-btn'
         href={`${!loading && user.links.html}`}
@@ -49,6 +49,6 @@ export default function Gallery({ name }) {
           return <Image index={index + 1} key={index} {...item} {...user} />;
         })}
       </div>
-    </div>
+    </section>
   );
 }
