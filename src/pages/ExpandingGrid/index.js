@@ -10,9 +10,9 @@ export default function App() {
   const [content, setContent] = useState(gridItems);
 
   return (
-    <main>
-      <header>
-        <h1>Expansion</h1>
+    <main className='expandinggrid-main'>
+      <header className='expandinggrid-header'>
+        <h1>Grid Expansion</h1>
       </header>
       <section className='expandinggrid-grid'>
         {content.map((item, index) => {

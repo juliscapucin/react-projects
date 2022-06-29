@@ -35,16 +35,20 @@ export default function GridItem({
   }, [gridItemsArray]);
 
   const gridGrow = () => {
+    // Horizontal
     gridItemsArray.forEach((item, index) => {
       if (index === itemIndex) {
         item.style.width = "40vw";
       } else if (index === itemIndex + columns) {
         gridItemsArray[itemIndex + columns].style.width = "40vw";
+      } else if (index === itemIndex - columns) {
+        gridItemsArray[itemIndex - columns].style.width = "40vw";
       } else {
         item.style.width = "25vw";
       }
     });
 
+    // Vertical
     if (rowItemsArray[0].includes(itemIndex)) {
       for (let i = 0; i < columns; i++) {
         gridItemsArray[rowItemsArray[0][i]].style.height = "40vh";

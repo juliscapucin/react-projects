@@ -12,35 +12,62 @@ Grid Styles
 ===============
 */
 
-main {
+.expandinggrid-main {
   width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: $clr-white;
 }
 
-header {
+.expandinggrid-header {
   width: 90vw;
-  margin: auto;
-  padding-top: 2rem;
+  height: fit-content;
+  padding: 8vh 0 6vh 0;
+
+  h1 {
+    font-weight: 200;
+  }
 }
 
 .expandinggrid-grid {
-  border: 0.02rem solid $clr-black;
+  border: 1px solid $clr-black;
   max-width: 90vw;
   height: 60vh;
-  margin: auto;
   display: grid;
+  gap: 1px;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
+  overflow: hidden;
   cursor: pointer;
+
+  > :first-child {
+    border-right: 1px solid $clr-black;
+    border-bottom: 1px solid $clr-black;
+  }
+  > :nth-child(2) {
+    border-right: 1px solid $clr-black;
+    border-bottom: 1px solid $clr-black;
+  }
+  > :nth-child(3) {
+    border-bottom: 1px solid $clr-black;
+  }
+  > :nth-child(4) {
+    border-right: 1px solid $clr-black;
+  }
+  > :nth-child(5) {
+    border-right: 1px solid $clr-black;
+  }
 }
 
 .expandinggrid-grid-item {
+  width: 30vw;
+  height: 30vh;
   transition: 1s;
 
   .expandinggrid-container {
-    border: 0.02rem solid $clr-black;
     padding: 1rem;
     overflow: hidden;
     width: 100%;
