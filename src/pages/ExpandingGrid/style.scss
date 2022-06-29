@@ -11,3 +11,49 @@ Variables
 Grid Styles
 ===============
 */
+
+main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  width: 90vw;
+  margin: auto;
+  padding-top: 2rem;
+}
+
+.expandinggrid-grid {
+  border: 0.02rem solid $clr-black;
+  max-width: 90vw;
+  height: 60vh;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  cursor: pointer;
+}
+
+.expandinggrid-grid-item {
+  transition: 1s;
+
+  .expandinggrid-container {
+    border: 0.02rem solid $clr-black;
+    padding: 1rem;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    .expandinggrid-title {
+      h4 {
+        font-size: clamp(2rem, 2.5vw, 2.5rem);
+        font-weight: 200;
+        span {
+          font-size: clamp(1rem, 1.5vw, 1.5rem);
+          font-weight: 100;
+        }
+      }
+    }
+  }
+}

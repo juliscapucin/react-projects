@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import GridItem from "./GridItem";
 
 import gridItems from "./data";
+
+import "./style.scss";
 
 export default function App() {
   const [content, setContent] = useState(gridItems);
@@ -13,11 +15,9 @@ export default function App() {
         <h1>Expansion</h1>
       </header>
       <section className='expandinggrid-grid'>
-        <div className='expandinggrid-row'>
-          {content.map((item, index) => {
-            return <GridItem key={index} {...item} index={index + 1} />;
-          })}
-        </div>
+        {content.map((item, index) => {
+          return <GridItem key={index} {...item} elementIndex={index + 1} />;
+        })}
       </section>
     </main>
   );
