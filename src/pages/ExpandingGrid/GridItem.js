@@ -44,12 +44,20 @@ export default function GridItem({
         item.style.width = "25vw";
       }
     });
-    gridItemsArray.forEach((item, index) => {
-      //   if (rowItemsArray[0].includes(index)) {
-      //     rowItemsArray[0];
-      //   }
-    });
+
+    if (rowItemsArray[0].includes(itemIndex)) {
+      for (let i = 0; i < columns; i++) {
+        gridItemsArray[rowItemsArray[0][i]].style.height = "40vh";
+        gridItemsArray[rowItemsArray[1][i]].style.height = "20vh";
+      }
+    } else {
+      for (let i = 0; i < columns; i++) {
+        gridItemsArray[rowItemsArray[1][i]].style.height = "40vh";
+        gridItemsArray[rowItemsArray[0][i]].style.height = "20vh";
+      }
+    }
   };
+
   const gridShrink = () => {
     gridItemsArray.forEach((item) => {
       item.style.width = "30vw";
