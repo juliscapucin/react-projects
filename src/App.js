@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import React, { useEffect } from "react";
 
 import Accordion from "./pages/Accordion";
 import DarkMode from "./pages/DarkMode";
@@ -19,6 +20,10 @@ import SharedLayout from "./pages/SharedLayout";
 import "./styles/App.scss";
 
 function App() {
+  useEffect(() => {
+    document.title = "Juli Scapucin – React Playground";
+  }, []);
+
   return (
     <Routes>
       <Route path='/' element={<SharedLayout />}>

@@ -6,7 +6,7 @@ export default function GridItem({
   paragraph,
   elementIndex,
 }) {
-  const [itemIndex, setItemIndex] = useState(elementIndex - 1);
+  const [itemIndex] = useState(elementIndex - 1);
   const [gridItemsArray, setGridItemsArray] = useState([]);
   const [rowItemsArray, setRowItemsArray] = useState();
 
@@ -26,10 +26,10 @@ export default function GridItem({
       indexesArray.push(i);
     }
 
-    let middleIndex = Math.ceil(gridItemsArray.length / columns);
+    let middleIndex = Math.ceil(gridItemsArray.length / rows);
 
-    const firstHalf = [...indexesArray].splice(0, middleIndex + 1);
-    const secondHalf = [...indexesArray].splice(-middleIndex - 1);
+    const firstHalf = [...indexesArray].splice(0, middleIndex);
+    const secondHalf = [...indexesArray].splice(-middleIndex);
 
     setRowItemsArray([firstHalf, secondHalf]);
   }, [gridItemsArray]);
@@ -82,13 +82,13 @@ export default function GridItem({
             {title}
             <span> /{elementIndex}</span>
           </h4>
-          <h5>Details</h5>
+          {/* <h5>Details</h5> */}
         </div>
-        <div className='expandinggrid-img-container'>
+        {/* <div className='expandinggrid-img-container'>
           <div className='expandinggrid-img'>
             <img src='' alt='' />
           </div>
-        </div>
+        </div> */}
       </div>
     </article>
   );

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import GridItem from "./GridItem";
 
@@ -7,7 +7,7 @@ import gridItems from "./data";
 import "./style.scss";
 
 export default function App() {
-  const [content, setContent] = useState(gridItems);
+  const [content] = useState(gridItems);
 
   return (
     <main className='expandinggrid-main'>
