@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 
 import Accordion from "./pages/Accordion";
 import DarkMode from "./pages/DarkMode";
-import ExpandingGrid from "./pages/ExpandingGrid";
+import ExpansiveGrid from "./pages/ExpansiveGrid";
 import PhotoGallery from "./pages/PhotoGallery";
 import GridStretch from "./pages/GridStretch";
 import Home from "./pages/Home";
@@ -29,7 +29,7 @@ function App() {
       <Route path='/' element={<SharedLayout />}>
         <Route path='/accordion' element={<Accordion />} />
         <Route path='/darkmode' element={<DarkMode />} />
-        <Route path='/expandinggrid' element={<ExpandingGrid />} />
+        <Route path='/expansivegrid' element={<ExpansiveGrid />} />
         <Route path='/gridstretch' element={<GridStretch />} />
         <Route index element={<Home />} />
         <Route path='/horizontalsnap' element={<HorizontalSnap />} />
