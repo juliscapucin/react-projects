@@ -34,21 +34,25 @@ export default function Gallery({ name }) {
   }, []);
 
   return (
-    <section className='photo-gallery-gallery'>
-      <a
-        className='photo-gallery-btn'
-        href={`${!loading && user.links.html}`}
-        target='_blank'
-      >
-        <div className='photo-gallery-user-name'>
-          <h1>{user.name}</h1>
+    <>
+      <header>
+        <a
+          className='photo-gallery-btn'
+          href={`${!loading && user.links.html}`}
+          target='_blank'
+        >
+          <div className='photo-gallery-user-name'>
+            <h1>{user.name}</h1>
+          </div>
+        </a>
+      </header>
+      <section className='photo-gallery-gallery'>
+        <div className='photo-gallery-grid '>
+          {images.map((item, index) => {
+            return <Image index={index + 1} key={index} {...item} {...user} />;
+          })}
         </div>
-      </a>
-      <div className='photo-gallery-media-scroller '>
-        {images.map((item, index) => {
-          return <Image index={index + 1} key={index} {...item} {...user} />;
-        })}
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

@@ -8,7 +8,7 @@ Variables
 
 /*
 =============== 
-Grid Styles
+Main
 ===============
 */
 
@@ -19,24 +19,39 @@ Grid Styles
   }
 
   width: 100vw;
-  display: flex;
-  justify-content: flex-end;
   background-color: $clr-black;
 }
+
+/*
+=============== 
+Gallery
+===============
+*/
 
 .photo-gallery-gallery {
   position: relative;
   margin: 0;
 }
 
-.photo-gallery-media-scroller {
+.photo-gallery-grid {
   width: 100vw;
   display: grid;
   justify-items: flex-end;
   grid-gap: 1rem;
   grid-template-rows: repeat(autofill, 70vh);
   padding: 2rem;
+
+  // > :last-child {
+  //   transform-origin: bottom right;
+  //   margin-bottom: 13rem;
+  // }
 }
+
+/*
+=============== 
+Image
+===============
+*/
 
 .photo-gallery-btn {
   border: transparent;
@@ -52,6 +67,9 @@ Grid Styles
   display: flex;
   justify-content: flex-end;
   overflow: hidden;
+  will-change: transform;
+  transform-origin: center;
+  transition: 0.8s;
 
   .photo-gallery-img {
     display: flex;
@@ -162,6 +180,44 @@ Type styles
         font-size: clamp(1rem, 1.2vw, 1.2rem);
         text-align: left;
       }
+    }
+  }
+}
+
+/*
+=============== 
+Footer
+===============
+*/
+
+.photo-gallery-footer {
+  width: 100vw;
+  height: 13rem;
+  background-color: $clr-black;
+  color: $clr-white;
+  padding: 2rem;
+
+  ul {
+    list-style-type: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: $clr-white;
+    text-decoration: underline;
+    text-decoration-color: $clr-black;
+    transition: 0.3s;
+    &:hover {
+      text-decoration-color: $clr-white;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    padding-left: 30vw;
+    display: flex;
+
+    .photo-gallery-socials {
+      margin-left: 15rem;
     }
   }
 }

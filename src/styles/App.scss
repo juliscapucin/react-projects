@@ -28,6 +28,10 @@ Global Styles
   $clr-tint: #f2ff79;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   overscroll-behavior-y: none;
   font-family: $font-secondary, sans-serif;

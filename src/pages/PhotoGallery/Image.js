@@ -5,6 +5,7 @@ export default function Image({ url, description, index }) {
   const [info, setInfo] = useState({});
   const [showInfo, setShowInfo] = useState(false);
   const refParagraph = useRef(null);
+  const refImageWrapper = useRef(null);
 
   useEffect(() => {
     texts.forEach((item) => {
@@ -14,14 +15,22 @@ export default function Image({ url, description, index }) {
     });
   }, []);
 
+  const growImage = () => {
+    refImageWrapper.current.style.width = "90vw";
+    refImageWrapper.current.style.height = "100vh";
+    refImageWrapper.current.scrollIntoView();
+    refImageWrapper.current.scrollIntoView();
+  };
+
   return (
-    <article className='photo-gallery-article'>
+    <article>
       <button
         className='photo-gallery-btn'
         onMouseEnter={() => setShowInfo(!showInfo)}
         onMouseLeave={() => setShowInfo(!showInfo)}
+        onClick={growImage}
       >
-        <div className='photo-gallery-img-container' id={index}>
+        <div className='photo-gallery-img-container' ref={refImageWrapper}>
           <div className='photo-gallery-info-container'>
             <div
               className='photo-gallery-info'
