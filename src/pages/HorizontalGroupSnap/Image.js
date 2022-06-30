@@ -32,7 +32,7 @@ export default function Image({ urls, alt_description, index }) {
         </div>
       </button>
       <div className='hor-group-snap-img'>
-        <img src={urls.small} alt={alt_description} />
+        <img src={urls.small} alt={alt_description} loading='lazy' />
       </div>
     </div>
   );

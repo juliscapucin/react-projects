@@ -29,6 +29,7 @@ Global Styles
 }
 
 body {
+  overscroll-behavior-y: none;
   font-family: $font-secondary, sans-serif;
   line-height: 1.8;
   font-size: 0.875rem;

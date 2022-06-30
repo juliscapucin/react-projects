@@ -8,16 +8,14 @@ export default function App() {
   const [featuredUsers] = useState(users);
 
   return (
-    <main className='photo-gallery-main-container'>
-      {/* <div className='photo-gallery-no-click top'></div> */}
+    <main className='photo-gallery-main-container photo-gallery-inline'>
       {featuredUsers.map((item, index) => {
         return (
-          <article key={index}>
+          <section key={index}>
             <Gallery {...item} />
-          </article>
+          </section>
         );
       })}
-      {/* <div className='photo-gallery-no-click bottom'></div> */}
     </main>
   );
 }

@@ -13,8 +13,9 @@ export default function GridItem({
   const refGridItem = useRef(null);
 
   const columns = 3;
-  const rows = 2;
 
+  // =======================
+  // Divides array into rows
   const divideArray = (myArray, chunkSize) => {
     var results = [];
 
@@ -40,6 +41,7 @@ export default function GridItem({
   }, [gridItemsArray]);
 
   const gridGrow = () => {
+    // ===========
     // Horizontal
     gridItemsArray.forEach((item, index) => {
       if (index === itemIndex) {
@@ -52,7 +54,7 @@ export default function GridItem({
         item.style.width = "25vw";
       }
     });
-
+    // =========
     // Vertical
     if (rowItemsArray[0].includes(itemIndex)) {
       for (let i = 0; i < columns; i++) {

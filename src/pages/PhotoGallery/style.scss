@@ -19,27 +19,10 @@ Grid Styles
   }
 
   width: 100vw;
-  height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   background-color: $clr-black;
-  overflow: hidden;
 }
-
-// .photo-gallery-no-click {
-//   position: absolute;
-//   left: 0;
-//   right: 0;
-//   height: 10rem;
-//   z-index: 100;
-
-//   &.top {
-//     top: 0;
-//   }
-//   &.bottom {
-//     bottom: 0;
-//   }
-// }
 
 .photo-gallery-gallery {
   position: relative;
@@ -47,24 +30,12 @@ Grid Styles
 }
 
 .photo-gallery-media-scroller {
-  position: relative;
   width: 100vw;
-  height: 100vh;
   display: grid;
+  justify-items: flex-end;
   grid-gap: 1rem;
-  grid-template-rows: repeat(autofill, 1fr);
-  overflow-y: auto;
-  overflow-x: hidden;
-  overscroll-behavior-inline: contain;
+  grid-template-rows: repeat(autofill, 70vh);
   padding: 2rem;
-}
-
-.photo-gallery-inline {
-  scroll-snap-type: both mandatory;
-
-  & > * {
-    scroll-snap-align: center;
-  }
 }
 
 .photo-gallery-btn {
@@ -74,10 +45,10 @@ Grid Styles
 }
 
 .photo-gallery-img-container {
-  width: 100vw;
+  position: relative;
+  width: 70vw;
   height: 70vh;
   padding-right: 2rem;
-  position: relative;
   display: flex;
   justify-content: flex-end;
   overflow: hidden;
@@ -85,9 +56,8 @@ Grid Styles
   .photo-gallery-img {
     display: flex;
     align-items: center;
-    width: 70vw;
+    width: 100%;
     height: 100%;
-    transform: scale(1);
     will-change: transform;
     transition: 0.6s;
 
@@ -113,7 +83,7 @@ Type styles
 */
 
 .photo-gallery-user-name {
-  position: absolute;
+  position: fixed;
   transform: rotate(-90deg);
   top: 8rem;
   left: -5rem;
@@ -156,35 +126,31 @@ Type styles
   }
 }
 
-.photo-gallery-info {
+.photo-gallery-info-container {
   position: absolute;
-  bottom: -3rem;
-  left: 10rem;
-  height: 30vh;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  text-align: left;
-  color: $clr-white;
+  overflow: hidden;
+  width: 100%;
+  height: 8rem;
+  pointer-events: none;
+  bottom: 2rem;
+  left: 3rem;
   z-index: 10;
 
-  @media screen and (min-width: 992px) {
-    left: 20rem;
-    width: 100%;
-  }
-
-  h3 {
+  .photo-gallery-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
     color: $clr-white;
-    font-weight: 100;
-  }
-
-  .photo-gallery-paragraph-container {
-    color: $clr-white;
-    overflow: hidden;
     transition: $transition;
+
+    h3 {
+      color: $clr-white;
+      font-weight: 100;
+    }
+
     .photo-gallery-paragraph {
+      color: $clr-white;
       display: flex;
       flex-direction: column;
       align-items: flex-start;

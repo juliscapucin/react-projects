@@ -44,7 +44,7 @@ export default function Gallery({ name }) {
           <h1>{user.name}</h1>
         </div>
       </a>
-      <div className='photo-gallery-media-scroller photo-gallery-inline'>
+      <div className='photo-gallery-media-scroller '>
         {images.map((item, index) => {
           return <Image index={index + 1} key={index} {...item} {...user} />;
         })}
