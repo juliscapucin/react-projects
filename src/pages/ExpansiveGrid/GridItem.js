@@ -15,6 +15,16 @@ export default function GridItem({
   const columns = 3;
   const rows = 2;
 
+  const divideArray = (myArray, chunkSize) => {
+    var results = [];
+
+    while (myArray.length) {
+      results.push(myArray.splice(0, chunkSize));
+    }
+
+    return results;
+  };
+
   useEffect(() => {
     setGridItemsArray([...refGridItem.current.parentNode.children]);
   }, []);
@@ -26,12 +36,7 @@ export default function GridItem({
       indexesArray.push(i);
     }
 
-    let middleIndex = Math.ceil(gridItemsArray.length / rows);
-
-    const firstHalf = [...indexesArray].splice(0, middleIndex);
-    const secondHalf = [...indexesArray].splice(-middleIndex);
-
-    setRowItemsArray([firstHalf, secondHalf]);
+    setRowItemsArray(divideArray(indexesArray, columns));
   }, [gridItemsArray]);
 
   const gridGrow = () => {
