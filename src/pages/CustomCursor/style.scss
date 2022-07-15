@@ -1,0 +1,111 @@
+.customcursor__container {
+  position: relative;
+  padding: 10rem;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 6rem;
+  cursor: none;
+
+  .customcursor__cursor {
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100%;
+    // background-color: $clr-white;
+    border: $clr-black 1px solid;
+    z-index: 1;
+    user-select: none;
+    pointer-events: none;
+    transform: scale(0.8);
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      border-radius: 100%;
+      opacity: 0;
+    }
+
+    &.active {
+      opacity: 1;
+      transform: scale(12);
+
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+
+  .customcursor__follower {
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 100%;
+    z-index: 1;
+    user-select: none;
+    pointer-events: none;
+    overflow: hidden;
+    transition: $transition;
+
+    .customcursor__follower__inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 100%;
+      background-color: $clr-white;
+      user-select: none;
+      pointer-events: none;
+      display: grid;
+      place-items: center;
+      transform: translate3d(-200%, 500%, 0);
+      transition: $transition;
+
+      h4 {
+        display: block;
+        padding-top: 0.7rem;
+      }
+
+      &.active {
+        transform: translate3d(0, 0, 0);
+        transition: $transition;
+      }
+    }
+  }
+
+  .customcursor__image__container {
+    position: relative;
+    height: 100%;
+    transition: $transition;
+
+    a {
+      cursor: none;
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .customcursor__photographer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      transition: $transition;
+    }
+
+    &:hover {
+      transform: translateY(-8%);
+
+      > .customcursor__photographer {
+        transform: translateY(160%);
+      }
+    }
+  }
+}

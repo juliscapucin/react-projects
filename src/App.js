@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import React, { useEffect } from "react";
 
 import Accordion from "./pages/Accordion";
+import CustomCursor from "./pages/CustomCursor";
 import DarkMode from "./pages/DarkMode";
 import ExpansiveGrid from "./pages/ExpansiveGrid";
 import PhotoGallery from "./pages/PhotoGallery";
@@ -28,6 +29,7 @@ function App() {
     <Routes>
       <Route path='/' element={<SharedLayout />}>
         <Route path='/accordion' element={<Accordion />} />
+        <Route path='/customcursor' element={<CustomCursor />} />
         <Route path='/darkmode' element={<DarkMode />} />
         <Route path='/expansivegrid' element={<ExpansiveGrid />} />
         <Route path='/gridstretch' element={<GridStretch />} />

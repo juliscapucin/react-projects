@@ -34,7 +34,9 @@ $clr-green-8: hsl(125, 31%, 80%);
 $clr-green-9: hsl(125, 33%, 89%);
 $clr-green-10: hsl(125, 36%, 96%);
 
-$transition: all 0.3s linear;
+$ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+$transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+$transition-slow: all 0.8s $ease-out-expo;
 $spacing: 0.1rem;
 $radius: 0.25rem;
 $light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
