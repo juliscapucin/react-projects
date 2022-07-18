@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import Accordion from "./pages/Accordion";
 import CustomCursor from "./pages/CustomCursor";
 import DarkMode from "./pages/DarkMode";
+import DraggableSlider from "./pages/DraggableSlider";
 import ExpansiveGrid from "./pages/ExpansiveGrid";
 import PhotoGallery from "./pages/PhotoGallery";
 import GridStretch from "./pages/GridStretch";
@@ -31,6 +32,7 @@ function App() {
         <Route path='/accordion' element={<Accordion />} />
         <Route path='/customcursor' element={<CustomCursor />} />
         <Route path='/darkmode' element={<DarkMode />} />
+        <Route path='/draggableslider' element={<DraggableSlider />} />
         <Route path='/expansivegrid' element={<ExpansiveGrid />} />
         <Route path='/gridstretch' element={<GridStretch />} />
         <Route index element={<Home />} />
