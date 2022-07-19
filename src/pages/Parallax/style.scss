@@ -1,23 +1,19 @@
 .parallax__container {
   position: relative;
-  padding: 3rem;
   width: 100vw;
   display: grid;
-  grid-template-rows: repeat(auto-fill, 150rem);
-  grid-gap: 6rem;
+  grid-template-rows: repeat(auto-fill, 140rem);
 
   .parallax__section {
     position: relative;
     width: 100vw;
-    height: 150rem;
-    padding: 5rem;
+    height: 140rem;
+    padding: 0 5rem;
     display: flex;
     flex-direction: column;
-    h4 {
-      font-weight: 200;
-    }
 
     .parallax__photographer {
+      margin: 5rem 0;
       h1 {
         font-size: 15rem;
         font-weight: 100;
@@ -28,30 +24,45 @@
       display: flex;
       align-items: flex-end;
       gap: 3rem;
-      padding: 10rem 0;
+      padding: 0 5rem 10rem 1rem;
       border-bottom: 1px $clr-black solid;
+
+      &.reversed {
+        flex-direction: row-reverse;
+      }
 
       .parallax__image__container {
         position: relative;
-        width: 50%;
+        width: 70%;
         height: 100rem;
         overflow: hidden;
-        display: grid;
-        place-items: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         img {
-          width: 110%;
-          height: 110%;
+          width: 115%;
+          height: 115%;
           object-fit: cover;
+          object-position: -60px 1px;
         }
       }
 
       .parallax__profile {
-        width: 50%;
+        width: 30%;
         display: flex;
-        align-items: center;
+        flex-direction: column;
+        align-items: flex-start;
         justify-content: flex-end;
-        gap: 3rem;
+        gap: 10rem;
+
+        h3 {
+          font-weight: 200;
+        }
+
+        .parallax__arrow {
+          transform: scale(2) translateX(30%);
+        }
       }
     }
   }

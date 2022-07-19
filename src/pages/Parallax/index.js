@@ -8,7 +8,7 @@ export default function App() {
   return (
     <main className='parallax__container'>
       {images.map((item, index) => {
-        return <Section key={index} item={item} speed={1} />;
+        return <Section key={index} item={item} index={index} />;
       })}
     </main>
   );

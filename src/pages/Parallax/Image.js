@@ -5,7 +5,7 @@ function useParallax(value, distance) {
   return useTransform(value, [0, 1], [-distance, distance]);
 }
 
-export default function Image({ url, photographer, link, speed }) {
+export default function Image({ url, photographer, link }) {
   const ref = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -13,7 +13,7 @@ export default function Image({ url, photographer, link, speed }) {
     offset: ["start end", "end start"],
   });
 
-  const y = useParallax(scrollYProgress, 200 * speed);
+  const y = useParallax(scrollYProgress, 200);
 
   return (
     <motion.div className='parallax__image__container' ref={ref}>
