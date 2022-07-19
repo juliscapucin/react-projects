@@ -6,13 +6,14 @@ import CustomCursor from "./pages/CustomCursor";
 import DarkMode from "./pages/DarkMode";
 import DraggableSlider from "./pages/DraggableSlider";
 import ExpansiveGrid from "./pages/ExpansiveGrid";
-import PhotoGallery from "./pages/PhotoGallery";
 import GridStretch from "./pages/GridStretch";
 import Home from "./pages/Home";
 import HorizontalSnap from "./pages/HorizontalSnap";
 import HorizontalGroupSnap from "./pages/HorizontalGroupSnap";
 import InfiniteScroll from "./pages/InfiniteScroll";
 import Pagination from "./pages/Pagination";
+import Parallax from "./pages/Parallax";
+import PhotoGallery from "./pages/PhotoGallery";
 import RandomRecipe from "./pages/RandomRecipe";
 // import ShoppingCart from "./pages/ShoppingCart";
 // import TodoList from "./pages/TodoList";
@@ -40,6 +41,7 @@ function App() {
         <Route path='/horizontalgroupsnap' element={<HorizontalGroupSnap />} />
         <Route path='/infinitescroll' element={<InfiniteScroll />} />
         <Route path='/pagination' element={<Pagination />} />
+        <Route path='/parallax' element={<Parallax />} />
         <Route path='/photogallery' element={<PhotoGallery />} />
         <Route path='/randomrecipe' element={<RandomRecipe />} />
         {/* <Route path='/shoppingcart' element={<ShoppingCart />} />

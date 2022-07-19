@@ -5,7 +5,7 @@ import images from "./images";
 import Image from "./Image";
 import useCustomCursor from "./useCustomCursor";
 
-export default function App() {
+export default function CustomCursor() {
   const refCursor = useRef(null);
   const refFollower = useRef(null);
   const [isHovering, setIsHovering] = useState(false);

@@ -1,0 +1,58 @@
+.parallax__container {
+  position: relative;
+  padding: 3rem;
+  width: 100vw;
+  display: grid;
+  grid-template-rows: repeat(auto-fill, 150rem);
+  grid-gap: 6rem;
+
+  .parallax__section {
+    position: relative;
+    width: 100vw;
+    height: 150rem;
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    h4 {
+      font-weight: 200;
+    }
+
+    .parallax__photographer {
+      h1 {
+        font-size: 15rem;
+        font-weight: 100;
+      }
+    }
+
+    .parallax__section__photo {
+      display: flex;
+      align-items: flex-end;
+      gap: 3rem;
+      padding: 10rem 0;
+      border-bottom: 1px $clr-black solid;
+
+      .parallax__image__container {
+        position: relative;
+        width: 50%;
+        height: 100rem;
+        overflow: hidden;
+        display: grid;
+        place-items: center;
+
+        img {
+          width: 110%;
+          height: 110%;
+          object-fit: cover;
+        }
+      }
+
+      .parallax__profile {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 3rem;
+      }
+    }
+  }
+}
