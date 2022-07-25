@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import React, { useEffect } from "react";
 
 import Accordion from "./pages/Accordion";
+import Countdown from "./pages/Countdown";
 import CustomCursor from "./pages/CustomCursor";
 import DarkMode from "./pages/DarkMode";
 import DraggableSlider from "./pages/DraggableSlider";
@@ -31,6 +32,7 @@ function App() {
     <Routes>
       <Route path='/' element={<SharedLayout />}>
         <Route path='/accordion' element={<Accordion />} />
+        <Route path='/countdown' element={<Countdown />} />
         <Route path='/customcursor' element={<CustomCursor />} />
         <Route path='/darkmode' element={<DarkMode />} />
         <Route path='/draggableslider' element={<DraggableSlider />} />

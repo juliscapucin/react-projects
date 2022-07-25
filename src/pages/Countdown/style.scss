@@ -1,0 +1,37 @@
+.countdown__container {
+  height: 100vh;
+  width: 100vw;
+  background-color: $clr-black;
+  display: flex;
+  align-items: center;
+
+  .countdown__grid-container {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(4, 25vw);
+    border: 0.2rem solid $clr-white;
+
+    .countdown__cell {
+      overflow: hidden;
+      padding: 4rem 1rem 2rem 1rem;
+      border: 0.2rem solid $clr-white;
+      height: 25vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      h1 {
+        font-size: 28rem;
+        font-weight: 100;
+        text-align: center;
+        color: $clr-white;
+      }
+
+      h4 {
+        font-weight: 100;
+        color: $clr-white;
+        text-align: center;
+      }
+    }
+  }
+}
