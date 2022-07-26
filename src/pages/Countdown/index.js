@@ -23,7 +23,7 @@ export default function Countdown() {
     return n;
   };
 
-  useEffect(() => {
+  const getRemainingTime = () => {
     if (date !== today) {
       setDifference(date.getTime() - today.getTime());
       const oneDay = 24 * 60 * 60 * 1000;
@@ -34,37 +34,24 @@ export default function Countdown() {
       setHours(formatNumber(Math.floor((difference % oneDay) / oneHour)));
       setMinutes(formatNumber(Math.floor((difference % oneHour) / oneMinute)));
       setSeconds(formatNumber(Math.floor((difference % oneMinute) / 1000)));
+
+      setDifference(difference - 1000);
     }
+  };
+
+  useEffect(() => {
+    getRemainingTime();
   }, [date]);
 
   useEffect(() => {
     if (!checkSubmit) return;
 
-    const timer = setTimeout(() => {
-      if (seconds > 0) {
-        setSeconds(seconds - 1);
-      } else if (seconds === 0 && minutes === 0 && hours === 0 && days === 0) {
-        setDays("oi");
-        setHours("oi");
-        setMinutes("oi");
-        setSeconds("oi");
-      } else if (seconds === 0 && minutes === 0 && hours === 0) {
-        setDays(days - 1);
-        setHours(23);
-        setMinutes(59);
-        setSeconds(59);
-      } else if (seconds === 0 && minutes === 0) {
-        setHours(hours - 1);
-        setMinutes(59);
-        setSeconds(59);
-      } else if (seconds === 0) {
-        setMinutes(minutes - 1);
-        setSeconds(59);
-      }
+    let countdown = setTimeout(() => {
+      getRemainingTime();
     }, 1000);
-    if (days === "oi") {
-      console.log("cleanup");
-      return () => clearTimeout(timer);
+
+    if (difference < 0) {
+      return () => clearTimeout(countdown);
     }
   });
 
