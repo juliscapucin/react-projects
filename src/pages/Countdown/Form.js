@@ -2,21 +2,7 @@ import { useState, useRef, useEffect } from "react";
 
 import Check from "./Check";
 
-export default function Form({
-  date,
-  setDate,
-  today,
-  years,
-  months,
-  setMonths,
-  days,
-  setDays,
-  hours,
-  setHours,
-  minutes,
-  setMinutes,
-  setCheckSubmit,
-}) {
+export default function Form({ date, setDate, today, setCheckSubmit }) {
   const refDate = useRef(null);
   const refSubmit = useRef(null);
 
@@ -48,16 +34,16 @@ export default function Form({
     if (!validateDate()) {
       refSubmit.current.innerHTML = "Please fix error to submit";
       refSubmit.current.style.display = "block";
+      setCheckSubmit(false);
       setTimeout(() => {
-        setCheckSubmit(false);
         refSubmit.current.style.display = "none";
       }, 3000);
       return false;
     } else {
       refSubmit.current.innerHTML = `New date is ${date}`;
       refSubmit.current.style.display = "block";
+      setCheckSubmit(true);
       setTimeout(() => {
-        setCheckSubmit(true);
         refSubmit.current.style.display = "none";
       }, 3000);
     }

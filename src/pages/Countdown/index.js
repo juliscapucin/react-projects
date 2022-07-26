@@ -6,7 +6,7 @@ import Form from "./Form";
 
 export default function Countdown() {
   const [date, setDate] = useState(new Date());
-  const [today] = useState(new Date());
+  const [today, setToday] = useState(new Date());
   const [difference, setDifference] = useState(0);
   const [years, setYears] = useState(0);
   const [months, setMonths] = useState(0);
@@ -25,7 +25,6 @@ export default function Countdown() {
 
   const getRemainingTime = () => {
     if (date !== today) {
-      setDifference(date.getTime() - today.getTime());
       const oneDay = 24 * 60 * 60 * 1000;
       const oneHour = 60 * 60 * 1000;
       const oneMinute = 60 * 1000;
@@ -40,17 +39,25 @@ export default function Countdown() {
   };
 
   useEffect(() => {
-    getRemainingTime();
+    if (checkSubmit) getRemainingTime();
+  }, [checkSubmit]);
+
+  useEffect(() => {
+    setCheckSubmit(false);
+    setDifference(date.getTime() - today.getTime());
   }, [date]);
 
   useEffect(() => {
     if (!checkSubmit) return;
 
-    let countdown = setTimeout(() => {
+    const countdown = setTimeout(() => {
+      console.log(difference);
+
       getRemainingTime();
     }, 1000);
 
     if (difference < 0) {
+      console.log("cleanup");
       return () => clearTimeout(countdown);
     }
   });
@@ -79,16 +86,6 @@ export default function Countdown() {
         date={date}
         today={today}
         setDate={setDate}
-        years={years}
-        setYears={setYears}
-        months={months}
-        setMonths={setMonths}
-        days={days}
-        setDays={setDays}
-        hours={hours}
-        setHours={setHours}
-        minutes={minutes}
-        setMinutes={setMinutes}
         setCheckSubmit={setCheckSubmit}
       />
     </main>
