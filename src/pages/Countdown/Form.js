@@ -52,12 +52,11 @@ export default function Form({ date, setDate, today, setCheckSubmit }) {
   return (
     <section className='form__container'>
       <div className='form__title__container'>
-        <h3>Set a date </h3>
-        <h3>in the future</h3>
+        <h1>Countdown</h1>
       </div>
       <form className='form' onSubmit={handleSubmit}>
         <div className='input__group' ref={refDate}>
-          <label>Day</label>
+          <label>Set a day in the future</label>
           <input
             type='datetime-local'
             placeholder=''

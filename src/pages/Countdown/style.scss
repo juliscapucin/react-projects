@@ -5,24 +5,26 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 5rem;
 
   .countdown__grid-container {
     display: grid;
     align-items: center;
-    grid-template-columns: repeat(4, 25vw);
-    border: 0.2rem solid $clr-white;
+    grid-template-columns: repeat(4, 23vw);
+    border: 0.01rem solid $clr-white;
 
     .countdown__cell {
       overflow: hidden;
-      padding: 4rem 1rem 2rem 1rem;
-      border: 0.2rem solid $clr-white;
-      height: 25vw;
+      padding: 7rem 1rem 2rem 1rem;
+      border: 0.01rem solid $clr-white;
+      height: 23vw;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
 
       h1 {
-        font-size: 28rem;
+        font-size: 21rem;
+        letter-spacing: -0.5rem;
         font-weight: 100;
         text-align: center;
         color: $clr-white;
@@ -44,141 +46,148 @@
 .form__container {
   width: 100%;
   background-color: $clr-black;
-  display: block;
   padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   .form__title__container {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 4rem;
+    margin: 2rem 0;
 
-    h3 {
+    h1 {
+      text-align: center;
       color: $clr-white;
-      font-weight: 300;
-      line-height: 1.1;
+      font-weight: 100;
+      line-height: 0.8;
     }
   }
 
   .form {
-    width: 100%;
+    width: 20rem;
+    height: 20rem;
     display: block;
 
     .input__group {
+      position: relative;
       width: 100%;
       margin: 1rem 0;
+      padding: 0.3rem;
       background-color: $clr-white;
-    }
-    label {
-      width: 100%;
-      text-transform: uppercase;
-      font-weight: 300;
-      color: $clr-white;
-    }
 
-    input,
-    textarea {
-      resize: none;
-      width: 100%;
-      background: transparent;
-      border: 0;
-      outline: 0;
-      padding: 1rem 0;
-      border-bottom: 1px solid $clr-light-grey;
-      color: $clr-white;
-    }
+      label {
+        width: 100%;
+        text-transform: uppercase;
+        font-weight: 300;
+        color: $clr-black;
+      }
 
-    span {
-      color: $clr-white;
+      input {
+        resize: none;
+        height: 4rem;
+        width: 100%;
+        background: transparent;
+        border: 0;
+        outline: 0;
+        padding: 1rem 0;
+        border-bottom: 1px solid $clr-light-grey;
+        color: $clr-black;
+      }
+
+      span {
+        color: $clr-black;
+        margin: 0;
+        position: absolute;
+        right: 0.3rem;
+        top: 1rem;
+      }
     }
 
     .form__btn {
       background: $clr-white;
-      color: $clr-tint;
+      color: $clr-black;
       outline: 0;
       width: 100%;
-      height: 5rem;
-      margin: 3.5rem auto 1rem 0;
-      border: 1px solid $clr-tint;
+      height: 4rem;
+      margin: 2rem auto;
+      border: 1px solid $clr-black;
       border-radius: 3rem;
       cursor: pointer;
 
       p {
-        color: $clr-tint;
+        color: $clr-black;
         font-weight: 100;
+        margin: 0;
       }
     }
   }
 
   @media screen and (min-width: $desktop) {
-    height: 41rem;
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    padding: 4.3rem 4rem 4rem 6rem;
+    .form__container {
+      height: 41rem;
 
-    .form__title__container {
-      display: block;
-      width: 30rem;
-      h3 {
-        line-height: 1;
+      .form__title__container {
+        display: block;
+        width: 30rem;
+        h3 {
+          line-height: 1;
+        }
       }
-    }
 
-    .form {
-      width: 65%;
-      display: flex;
-      flex-direction: column;
-      padding: 0.5rem 0 0 0rem;
-
-      .input__group {
-        position: relative;
-        width: 50%;
+      .form {
+        width: 65%;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        align-items: center;
-        margin: 1rem 0;
-        position: relative;
+        padding: 0.5rem 0 0 0rem;
 
-        > label {
-          width: 100%;
-          text-transform: uppercase;
-        }
-        > input,
-        > textarea {
-          padding: 0.5rem 0;
-          border-bottom: 1px solid $clr-light-grey;
-          color: $clr-black;
+        .input__group {
+          position: relative;
+          width: 50%;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          align-items: center;
+          margin: 1rem 0;
+          position: relative;
+
+          > label {
+            width: 100%;
+            text-transform: uppercase;
+          }
+          input {
+            padding: 0.5rem 0;
+            color: $clr-black;
+          }
+
+          > span {
+            position: absolute;
+            right: 0;
+            color: $clr-medium-grey;
+            font-weight: 300;
+            font-size: 1.4rem;
+          }
+
+          .error__message {
+            bottom: 0;
+          }
         }
 
-        > span {
-          position: absolute;
-          right: 0;
-          color: $clr-medium-grey;
-          font-weight: 300;
-          font-size: 1.4rem;
-        }
+        .form__btn {
+          position: relative;
+          border: 1px solid $clr-black;
+          width: 17rem;
 
-        .error__message {
-          bottom: 0;
+          p {
+            color: $clr-black;
+            font-weight: 100;
+            margin: 0;
+          }
         }
       }
-
-      .form__btn {
-        position: relative;
-        border: 1px solid $clr-black;
-        width: 17rem;
-
-        p {
-          color: $clr-black;
-          font-weight: 100;
-          margin: 0;
-        }
+      #error__submit {
+        color: red;
+        font-weight: 300;
       }
-    }
-    #error__submit {
-      color: red;
-      font-weight: 300;
     }
   }
 }
