@@ -3,6 +3,7 @@
   width: 100vw;
   background-color: $clr-black;
   display: flex;
+  flex-direction: column;
   align-items: center;
 
   .countdown__grid-container {
@@ -32,6 +33,152 @@
         color: $clr-white;
         text-align: center;
       }
+    }
+  }
+}
+
+/* ======== */
+/*   FORM   */
+/* ======== */
+
+.form__container {
+  width: 100%;
+  background-color: $clr-black;
+  display: block;
+  padding: 3rem;
+
+  .form__title__container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4rem;
+
+    h3 {
+      color: $clr-white;
+      font-weight: 300;
+      line-height: 1.1;
+    }
+  }
+
+  .form {
+    width: 100%;
+    display: block;
+
+    .input__group {
+      width: 100%;
+      margin: 1rem 0;
+      background-color: $clr-white;
+    }
+    label {
+      width: 100%;
+      text-transform: uppercase;
+      font-weight: 300;
+      color: $clr-white;
+    }
+
+    input,
+    textarea {
+      resize: none;
+      width: 100%;
+      background: transparent;
+      border: 0;
+      outline: 0;
+      padding: 1rem 0;
+      border-bottom: 1px solid $clr-light-grey;
+      color: $clr-white;
+    }
+
+    span {
+      color: $clr-white;
+    }
+
+    .form__btn {
+      background: $clr-white;
+      color: $clr-tint;
+      outline: 0;
+      width: 100%;
+      height: 5rem;
+      margin: 3.5rem auto 1rem 0;
+      border: 1px solid $clr-tint;
+      border-radius: 3rem;
+      cursor: pointer;
+
+      p {
+        color: $clr-tint;
+        font-weight: 100;
+      }
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    height: 41rem;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    padding: 4.3rem 4rem 4rem 6rem;
+
+    .form__title__container {
+      display: block;
+      width: 30rem;
+      h3 {
+        line-height: 1;
+      }
+    }
+
+    .form {
+      width: 65%;
+      display: flex;
+      flex-direction: column;
+      padding: 0.5rem 0 0 0rem;
+
+      .input__group {
+        position: relative;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        align-items: center;
+        margin: 1rem 0;
+        position: relative;
+
+        > label {
+          width: 100%;
+          text-transform: uppercase;
+        }
+        > input,
+        > textarea {
+          padding: 0.5rem 0;
+          border-bottom: 1px solid $clr-light-grey;
+          color: $clr-black;
+        }
+
+        > span {
+          position: absolute;
+          right: 0;
+          color: $clr-medium-grey;
+          font-weight: 300;
+          font-size: 1.4rem;
+        }
+
+        .error__message {
+          bottom: 0;
+        }
+      }
+
+      .form__btn {
+        position: relative;
+        border: 1px solid $clr-black;
+        width: 17rem;
+
+        p {
+          color: $clr-black;
+          font-weight: 100;
+          margin: 0;
+        }
+      }
+    }
+    #error__submit {
+      color: red;
+      font-weight: 300;
     }
   }
 }
