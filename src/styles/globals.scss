@@ -29,6 +29,7 @@ body {
   line-height: 1.8;
   font-size: 0.875rem;
   font-weight: 100;
+  color: $clr-black;
 
   .dark-theme {
     background-color: #000;
@@ -46,9 +47,8 @@ h2,
 h3,
 h4 {
   font-family: $font-primary, sans-serif;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: $spacing;
-  text-transform: capitalize;
   line-height: 0.8;
   margin-bottom: 0.75rem;
 }
