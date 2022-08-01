@@ -5,7 +5,8 @@
   background-color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  overflow: hidden;
 
   .blendingmode__text {
     mix-blend-mode: difference;
@@ -17,6 +18,7 @@
       letter-spacing: -2rem;
       color: #fff;
       isolation: isolate;
+      line-height: 0.5;
     }
 
     a {
@@ -54,8 +56,10 @@
 
   .blendingmode__text__top,
   .blendingmode__text__bottom {
+    width: 100%;
+    height: min-content;
     mix-blend-mode: difference;
-    padding: 0 5rem;
+    padding: 2rem 5rem;
     z-index: 10;
 
     h2 {

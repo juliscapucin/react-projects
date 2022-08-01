@@ -16,7 +16,7 @@ export default function BlendingMode() {
       <section className='blendingmode__text__bottom'>
         <h2>
           Such a disparity in <a href='#'>color brightness</a> creates intense
-          <a href='#'>light levels</a> that <a href='#'>overstimulate</a> the
+          <a href='#'> light levels</a> that <a href='#'>overstimulate</a> the
           eyes when reading text.
         </h2>
       </section>
