@@ -2,13 +2,11 @@ import React, { useState } from "react";
 import users from "./users";
 import Gallery from "./Gallery";
 
-import "./style.scss";
-
-export default function App() {
+export default function Index() {
   const [featuredUsers, setFeaturedUsers] = useState(users);
 
   return (
-    <section className='hor-group-snap-main-container'>
+    <section className='horgroupsnap-main-container'>
       {featuredUsers.map((item, index) => {
         return (
           <article key={index}>

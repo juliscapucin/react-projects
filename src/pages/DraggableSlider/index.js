@@ -5,7 +5,7 @@ import images from "./images";
 
 import Image from "./Image";
 
-export default function App() {
+export default function Index() {
   const [width, setWidth] = useState(0);
   const refSlider = useRef(null);
 

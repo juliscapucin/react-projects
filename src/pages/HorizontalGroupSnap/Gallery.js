@@ -32,23 +32,23 @@ export default function Gallery({ name }) {
   }, []);
 
   return (
-    <div className='hor-group-snap-gallery'>
+    <div className='horgroupsnap-gallery'>
       <a
-        className='hor-group-snap-btn'
+        className='horgroupsnap-btn'
         href={`${!loading && user.links.html}`}
         // href={`https://www.instagram.com/${
         //   !loading && user.social.instagram_username
         // }`}
         target='_blank'
       >
-        <div className='hor-group-snap-user-name'>
+        <div className='horgroupsnap-user-name'>
           <h1>{user.name}</h1>
         </div>
       </a>
-      {/* <div className='hor-group-snap-user-bio'>
+      {/* <div className='horgroupsnap-user-bio'>
         <h4>{user.bio}</h4>
       </div> */}
-      <div className='hor-group-snap-media-scroller hor-group-snap-inline'>
+      <div className='horgroupsnap-media-scroller horgroupsnap-inline'>
         {images.map((item, index) => {
           return (
             <Image

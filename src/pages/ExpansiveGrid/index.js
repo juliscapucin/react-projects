@@ -4,8 +4,7 @@ import GridItem from "./GridItem";
 
 import gridItems from "./data";
 
-
-export default function App() {
+export default function Index() {
   const [content] = useState(gridItems);
 
   return (

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function App() {
+function Index() {
   const [theme, setTheme] = useState("dark-theme");
 
   useEffect(() => {
@@ -52,4 +52,4 @@ function App() {
   );
 }
 
-export default App;
+export default Index;

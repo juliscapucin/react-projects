@@ -15,23 +15,23 @@ export default function Image({ urls, alt_description, index }) {
   }, []);
 
   return (
-    <div className='hor-group-snap-img-container'>
+    <div className='horgroupsnap-img-container'>
       <button
         className='btn-title'
         onMouseEnter={() => setShowInfo(!showInfo)}
         onMouseLeave={() => setShowInfo(!showInfo)}
       >
-        <div className='hor-group-snap-info-container'>
-          <div className='hor-group-snap-info'>
+        <div className='horgroupsnap-info-container'>
+          <div className='horgroupsnap-info'>
             <h3>{info.title}</h3>
-            <div className='hor-group-snap-paragraph'>
+            <div className='horgroupsnap-paragraph'>
               <p ref={refParagraph}>{info.paragraph}</p>
             </div>
             <p>{info.shortText}</p>
           </div>
         </div>
       </button>
-      <div className='hor-group-snap-img'>
+      <div className='horgroupsnap-img'>
         <img src={urls.small} alt={alt_description} loading='lazy' />
       </div>
     </div>

@@ -1,18 +1,4 @@
-/*
-=============== 
-Variables
-===============
-*/
-
-@import "../../styles/variables";
-
-/*
-=============== 
-Type styles
-===============
-*/
-
-.hor-group-snap-user-name {
+.horgroupsnap-user-name {
   position: absolute;
   top: 1rem;
   left: 1rem;
@@ -26,7 +12,6 @@ Type styles
   h1 {
     color: $clr-white;
     font-weight: 100;
-    font-size: clamp(2rem, 3vw, 3rem);
   }
 
   &:hover {
@@ -34,7 +19,7 @@ Type styles
     transition: opacity 0.3s linear;
   }
 }
-.hor-group-snap-user-bio {
+.horgroupsnap-user-bio {
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -55,7 +40,7 @@ Grid Styles
 ===============
 */
 
-.hor-group-snap-main-container {
+.horgroupsnap-main-container {
   ::-webkit-scrollbar {
     width: 0;
     height: 0;
@@ -70,11 +55,11 @@ Grid Styles
   background-color: $clr-black;
 }
 
-.hor-group-snap-gallery {
+.horgroupsnap-gallery {
   margin: 0;
 }
 
-.hor-group-snap-media-scroller {
+.horgroupsnap-media-scroller {
   transform: rotate(-90deg);
   width: 100vh;
   height: 100vw;
@@ -88,29 +73,32 @@ Grid Styles
   overscroll-behavior-inline: contain;
 
   @media screen and (min-width: 992px) {
-    grid-auto-rows: minmax(25vw, 35vw);
+    grid-auto-rows: 25vw;
   }
 }
 
-.hor-group-snap-img-container {
+.horgroupsnap-img-container {
   position: relative;
-  transform: rotate(90deg) scale(1);
+  transform: rotate(90deg);
   will-change: transform;
   height: 100vh;
   width: 40vw;
+  overflow: hidden;
 
-  .hor-group-snap-img {
+  .horgroupsnap-img {
     height: 100vh;
     width: 100%;
     overflow: hidden;
+    will-change: transform;
+    transition: $transition-slow;
+
     img {
-      will-change: transform;
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
   }
-  .hor-group-snap-info-container {
+  .horgroupsnap-info-container {
     position: absolute;
     display: flex;
     justify-content: flex-start;
@@ -118,20 +106,21 @@ Grid Styles
     left: 0;
     bottom: 6rem;
     width: 100%;
-    height: 10rem;
+    height: 20rem;
     overflow: hidden;
     z-index: 200;
 
-    .hor-group-snap-info {
+    .horgroupsnap-info {
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;
       width: 80%;
       margin: auto;
+      padding: 2rem 0;
       color: $clr-white;
-      transform: translateY(100%) scale(0.8);
-      transform-origin: center;
+      transform: translateY(110%);
+      transition: $transition;
 
       h3 {
         color: $clr-white;
@@ -141,39 +130,27 @@ Grid Styles
         color: $clr-white;
         font-family: $font-primary;
         font-weight: 100;
-        font-size: clamp(1rem, 1.2vw, 1.2rem);
       }
-      .hor-group-snap-paragraph {
+      .horgroupsnap-paragraph {
         color: $clr-white;
       }
     }
   }
-
-  @media screen and (min-width: 992px) {
+}
+@media screen and (min-width: 992px) {
+  .horgroupsnap-img-container {
     width: 25vw;
-    transition: 1s;
 
     &:hover {
-      transform: rotate(90deg) scale(1.3);
+      transform: rotate(90deg);
 
-      .hor-group-snap-info {
-        animation: text-reveal 0.4s ease-out forwards 0.3s;
+      .horgroupsnap-img {
+        transform: scale(1.2);
+      }
+
+      .horgroupsnap-info {
+        transform: translateY(0%);
       }
     }
-  }
-}
-
-/*
-=============== 
-Keyframes
-===============
-*/
-
-@keyframes text-reveal {
-  0% {
-    transform: translateY(100%) scale(0.8);
-  }
-  100% {
-    transform: translateY(0) scale(0.8);
   }
 }
