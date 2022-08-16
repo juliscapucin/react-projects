@@ -1,0 +1,133 @@
+.clipboard__container {
+  height: 100vh;
+  width: 100vw;
+  background-color: $clr-black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5rem;
+}
+
+/* ======== */
+/*   FORM   */
+/* ======== */
+
+.clipboard__form__container {
+  width: 100%;
+  background-color: $clr-black;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .form__title__container {
+    width: 100%;
+    margin: 2rem 0;
+
+    h1 {
+      text-align: center;
+      color: $clr-white;
+      font-weight: 100;
+      line-height: 0.8;
+    }
+  }
+
+  .form {
+    width: 90%;
+    height: 50rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .input__group {
+      position: relative;
+      width: 100%;
+      margin: 1rem 0;
+      padding: 0.3rem;
+      background-color: $clr-white;
+
+      label {
+        width: 100%;
+        text-transform: uppercase;
+        font-weight: 300;
+        color: $clr-black;
+        text-align: left;
+      }
+
+      input {
+        resize: none;
+        width: 100%;
+        background: transparent;
+        border: 0;
+        outline: 0;
+        padding: 1rem 0;
+        border-bottom: 1px solid $clr-light-grey;
+        color: $clr-black;
+      }
+    }
+
+    .check__data {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+
+      p {
+        color: #109a48;
+        font-size: 1.6rem;
+        font-weight: 100;
+      }
+
+      &.error {
+        p {
+          color: red;
+        }
+      }
+
+      .check__icon {
+        transform: translateY(0.5rem);
+      }
+    }
+
+    .form__btn {
+      background: $clr-white;
+      color: $clr-black;
+      outline: 0;
+      width: 100%;
+      height: 4rem;
+      margin: 2rem auto;
+      border: 1px solid $clr-black;
+      border-radius: 3rem;
+      cursor: pointer;
+      transition: $transition;
+
+      p {
+        color: $clr-black;
+        font-weight: 100;
+        margin: 0;
+      }
+
+      &:hover {
+        background-color: $clr-black;
+        border: 1px solid $clr-white;
+
+        p {
+          color: $clr-white;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .clipboard__form__container {
+    .form {
+      width: 50%;
+
+      .form__btn {
+        width: 17rem;
+      }
+    }
+  }
+}

@@ -27,7 +27,7 @@ body {
   overscroll-behavior-y: none;
   font-family: $font-secondary, sans-serif;
   line-height: 1.8;
-  font-size: 0.875rem;
+  font-size: 1.6rem;
   font-weight: 100;
   color: $clr-black;
 
@@ -56,16 +56,27 @@ h1 {
   font-size: clamp(5rem, 7vw, 7rem);
 }
 h2 {
-  font-size: clamp(3rem, 4vw, 4rem);
+  font-size: clamp(4rem, 6vw, 6rem);
 }
 h3 {
-  font-size: clamp(2rem, 3vw, 3rem);
+  font-size: clamp(3rem, 4vw, 4rem);
 }
 h4 {
-  font-size: clamp(1.8rem, 2vw, 2rem);
+  font-size: clamp(2rem, 3vw, 3rem);
+}
+h5 {
+  font-size: clamp(1.8rem, 2.5vw, 2.5rem);
 }
 p {
   font-family: $font-secondary, sans-serif;
   font-weight: 100;
-  margin-bottom: 1.25rem;
+  font-size: 1.6rem;
+}
+
+main {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }

@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import data from "./data";
 import Item from "./Item";
 
-import "./style.scss";
-
 function Accordion() {
   const [experience] = useState(data);
 

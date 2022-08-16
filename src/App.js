@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 
 import Accordion from "./pages/Accordion";
 import BlendingMode from "./pages/BlendingMode";
+import ClipboardAPI from "./pages/ClipboardAPI";
 import Countdown from "./pages/Countdown";
 import CustomCursor from "./pages/CustomCursor";
 import DarkMode from "./pages/DarkMode";
@@ -34,6 +35,7 @@ function App() {
       <Route path='/' element={<SharedLayout />}>
         <Route path='/accordion' element={<Accordion />} />
         <Route path='/blendingmode' element={<BlendingMode />} />
+        <Route path='/clipboardapi' element={<ClipboardAPI />} />
         <Route path='/countdown' element={<Countdown />} />
         <Route path='/customcursor' element={<CustomCursor />} />
         <Route path='/darkmode' element={<DarkMode />} />

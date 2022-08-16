@@ -11,7 +11,9 @@ const Item = ({ title, info }) => {
     <article className='question'>
       <header>
         <button className='btn-title' onClick={() => setShowInfo(!showInfo)}>
-          <h4>{title}</h4>
+          <p>
+            <strong>{title}</strong>
+          </p>
         </button>
         <button
           className='btn-accordion'
@@ -27,7 +29,7 @@ const Item = ({ title, info }) => {
           showInfo
             ? {
                 height: `${
-                  refParagraph.current.getBoundingClientRect().height + 15
+                  refParagraph.current.getBoundingClientRect().height + 35
                 }px`,
               }
             : {
