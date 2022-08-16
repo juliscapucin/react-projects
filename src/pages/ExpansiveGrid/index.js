@@ -4,7 +4,6 @@ import GridItem from "./GridItem";
 
 import gridItems from "./data";
 
-import "./style.scss";
 
 export default function App() {
   const [content] = useState(gridItems);
