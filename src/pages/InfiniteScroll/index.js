@@ -2,8 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import { FaSearch } from "react-icons/fa";
 import Photo from "./Photo";
 
-import "./style.scss";
-
 const clientID = `?client_id=${process.env.REACT_APP_ACCESS_KEY}`;
 const mainUrl = `https://api.unsplash.com/photos/`;
 const searchUrl = `https://api.unsplash.com/search/photos/`;
@@ -86,7 +84,7 @@ function App() {
   };
 
   return (
-    <main>
+    <div className='infinite-container'>
       <section className='infinite-search'>
         <form className='infinite-search-form'>
           <input
@@ -114,7 +112,7 @@ function App() {
           })}
         </div>
       </section>
-    </main>
+    </div>
   );
 }
 

@@ -1,34 +1,7 @@
-/*
-=============== 
-Variables
-===============
-*/
-
-@import "../../styles/variables";
-
-/*
-=============== 
-Pagination
-===============
-*/
-
-.section {
-  width: 90vw;
-  margin: 0 auto;
-  max-width: var(--max-width);
-
-  @media screen and (min-width: 992px) {
-    .section {
-      width: 95vw;
-    }
-  }
+.infinite-container {
+  display: flex;
+  flex-direction: column;
 }
-
-/*
-=============== 
-Stock Photos
-===============
-*/
 .infinite-search {
   padding: 2rem 0 0 0;
   width: 90vw;
@@ -37,6 +10,10 @@ Stock Photos
 }
 .infinite-search-form {
   display: flex;
+
+  input {
+    border: solid 1px $clr-black;
+  }
 }
 .infinite-search-field {
   width: 100%;
@@ -86,9 +63,10 @@ Stock Photos
   gap: 2rem;
 }
 .infinite-photo {
-  height: 17.5rem;
+  height: 25rem;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 .infinite-photo > img {
   width: 100%;
@@ -96,7 +74,8 @@ Stock Photos
   display: block;
   object-fit: cover;
 }
-.infinite-photo h4 {
+.infinite-photo h5 {
+  font-weight: 200;
   margin-bottom: 0.5rem;
   color: $clr-white;
 }
@@ -118,7 +97,7 @@ Stock Photos
   background-color: $clr-black;
   color: white;
   transform: translateY(100%);
-  transition: var(--transition);
+  transition: $transition;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -139,5 +118,3 @@ Stock Photos
   text-align: center;
   padding: 3rem;
 }
-
-/*---------------------------------------------------------------*/
