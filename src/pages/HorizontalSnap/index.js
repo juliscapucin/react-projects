@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import users from "./users";
 import Gallery from "./Gallery";
 
-import "./style.scss";
-
 export default function App() {
   const [featuredUsers, setFeaturedUsers] = useState(users);
 
