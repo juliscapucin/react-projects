@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-import "./style.scss";
-
 const url = "http://recipes.wordpresssites.host/wp-json/wp/v2/recipes/";
 
 const defaultRecipe = {
@@ -15,7 +13,7 @@ const defaultRecipe = {
   instructions: "",
 };
 
-function App() {
+function RandomRecipe() {
   const [loading, setLoading] = useState(true);
   const [recipe, setRecipe] = useState(defaultRecipe);
   const [formerRecipe, setFormerRecipe] = useState(null);
@@ -27,8 +25,6 @@ function App() {
     const response = await fetch(url);
     const data = await response.json();
     let randomNumber = Math.floor(Math.random() * data.length);
-
-    console.log(randomNumber);
 
     if (formerRecipe === randomNumber && randomNumber === data.length - 1) {
       randomNumber = 0;
@@ -143,4 +139,4 @@ function App() {
   );
 }
 
-export default App;
+export default RandomRecipe;
